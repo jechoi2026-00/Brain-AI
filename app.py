@@ -1,7 +1,6 @@
-!pip install cv2, numpy, torch, torchvision, ultralytics
-
 import streamlit as st
 import cv2
+cv2.setNumThreads(0)
 import numpy as np
 import torch
 from ultralytics import YOLO
