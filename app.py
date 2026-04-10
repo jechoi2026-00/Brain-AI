@@ -1,3 +1,4 @@
+!pip install cv2, numpy, torch, torchvision, ultralytics
 
 import streamlit as st
 import cv2
