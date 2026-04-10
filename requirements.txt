@@ -4,3 +4,6 @@ torch
 torchvision
 ultralytics
 opencv-python-headless==4.9.0.80
+plotly
+pandas
+Pillow
