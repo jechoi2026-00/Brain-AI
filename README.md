@@ -156,10 +156,13 @@ Brain-AI/
 ├── requirements.txt
 ├── packages.txt
 ├── .gitignore
-
 ```
 
+> The trained YOLOv8 weight file (`best.pt`) is **not included in this repository**.  
+> If you want to run real inference, you need to train the model separately and place the resulting weight file in the project root.
+
 ---
+
 ## Installation
 
 ### 1. Clone the repository
@@ -177,17 +180,21 @@ pip install -r requirements.txt
 
 ### 3. Prepare model weights
 
-Place the trained YOLOv8 model file in the project root:
+The trained YOLOv8 weight file is not included in this repository.
+
+If you have a trained model, place it in the project root with the following filename:
 
 ```bash
 best.pt
 ```
 
-The Streamlit app expects the model path below:
+The current Streamlit app expects this path:
 
 ```python
 model = YOLO("best.pt")
 ```
+
+If `best.pt` is missing, the app will not be able to perform real tumor segmentation inference. In that case, you can still review the source code and interface structure, but model prediction requires a trained weight file.
 
 ### 4. Run the application
 
@@ -216,6 +223,28 @@ For Streamlit Cloud or Linux deployment, `packages.txt` may include:
 libgl1
 libglib2.0-0
 ```
+
+---
+
+## Model Weight Availability
+
+This repository does **not** include a trained `.pt` model file.
+
+The application code is written to load:
+
+```python
+YOLO("best.pt")
+```
+
+Therefore, real inference requires one of the following:
+
+| Option | Description |
+|---|---|
+| Train your own model | Run the training notebook and export the final YOLOv8 weight file as `best.pt` |
+| Use a private model file | Place your own trained `best.pt` in the project root |
+| Use demo-only mode | Keep the repository without weights and use it as a code/UI demonstration project |
+
+The `.pt` file is excluded from Git tracking because model weights can be large and may be affected by dataset or license restrictions.
 
 ---
 
@@ -258,6 +287,7 @@ The Streamlit application also displays case-level inference information such as
 
 - This project is an academic prototype.
 - It is not intended for real clinical diagnosis.
+- The model weight file is not included in this repository.
 - The model was trained under limited experimental conditions.
 - Performance may vary depending on MRI modality, preprocessing, dataset split, and model weights.
 - The current 3D localization is a simplified visualization, not a full anatomical registration pipeline.
