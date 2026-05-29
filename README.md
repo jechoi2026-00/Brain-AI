@@ -1,84 +1,150 @@
 # Brain-AI
 
-MRI-based Brain Tumor Prediction and Visualization System
+<p align="center">
+  <strong>MRI-based Brain Tumor Detection, Segmentation, and Visualization System</strong>
+</p>
 
-## Overview
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.9%2B-blue?logo=python">
+  <img src="https://img.shields.io/badge/Streamlit-Web%20App-red?logo=streamlit">
+  <img src="https://img.shields.io/badge/PyTorch-Deep%20Learning-orange?logo=pytorch">
+  <img src="https://img.shields.io/badge/YOLOv8-Segmentation-purple">
+  <img src="https://img.shields.io/badge/License-MIT-green">
+</p>
 
-**Brain-AI** is a research-oriented deep learning project for **brain tumor detection, segmentation, and visualization using MRI images**.  
-The project combines **YOLOv8 segmentation**, **3D U-Net-based volumetric analysis**, and a **Streamlit web interface** to provide an interactive demonstration of AI-assisted medical imaging analysis.
+---
 
-This repository was developed as an academic project and is intended for **research and educational purposes only**.
+## 🧠 Overview
 
-## Key Features
+**Brain-AI** is a research-oriented deep learning project for **brain tumor detection, segmentation, and visualization using MRI images**.
 
-- Brain tumor detection from MRI slices using **YOLOv8-Segmentation**
-- 3D-oriented analysis concept based on **3D U-Net / volumetric medical imaging workflow**
-- Interactive **Streamlit dashboard** for image upload and inference
-- Visualization of:
-  - AI-segmented tumor regions
-  - Detection confidence
-  - Anatomical 3D localization
-  - Diagnostic interpretation panel
-- Plotly-based interactive 3D rendering
-- Medical AI demonstration workflow for educational presentation
+The project demonstrates how a medical AI workflow can combine:
 
-## Streamlit App Preview
+- **YOLOv8 segmentation** for 2D tumor detection from MRI slices
+- **3D U-Net-based volumetric analysis concept** for 3D medical imaging
+- **Streamlit** for an interactive web application
+- **Plotly** for anatomical 3D localization and visualization
 
-Below are example outputs from the Streamlit application.
+This project was developed as an academic prototype and is intended for **research and educational demonstration only**.
 
-### 1) Brain Tumor 3D Diagnosis XAI 
-<img width="1208" height="1106" alt="그림01" src="https://github.com/user-attachments/assets/a0072ff8-394d-4a06-b3bf-1b7479e44ea6" />
+> This repository is **not a certified medical device** and must not be used as a standalone diagnostic system.
 
-### 2) Precision Diagnostic Interpretation
+---
 
-<img width="1600" height="1123" alt="그림03" src="https://github.com/user-attachments/assets/4f00091c-7861-43b4-8c57-5e5bf2d55999" />
+## 🖥 Streamlit App Preview
 
+### 1. Brain Tumor 3D Diagnosis and XAI Interface
 
-## Project Background
+<p align="center">
+  <img width="700" alt="Brain Tumor 3D Diagnosis XAI" src="https://github.com/user-attachments/assets/a0072ff8-394d-4a06-b3bf-1b7479e44ea6" />
+  <br>
+  <em>Figure 1. Streamlit interface showing 2D tumor segmentation and anatomical 3D localization.</em>
+</p>
 
-Brain tumor diagnosis requires high precision and often depends on the integrated interpretation of radiology, pathology, and clinical findings. This project explores how AI-based segmentation and visualization can support:
+### 2. Precision Diagnostic Interpretation Panel
 
-- clearer understanding of tumor structure,
-- improved communication of imaging findings,
-- educational demonstration of AI-assisted diagnosis,
-- and future extension toward medical decision support systems.
+<p align="center">
+  <img width="700" alt="Precision Diagnostic Interpretation" src="https://github.com/user-attachments/assets/4f00091c-7861-43b4-8c57-5e5bf2d55999" />
+  <br>
+  <em>Figure 2. Diagnostic interpretation panel with confidence score, estimated lesion size, and spatial mapping.</em>
+</p>
 
-## Models and Methods
+---
 
-### 1. YOLOv8s
-Used for 2D real-time object detection and segmentation on MRI slices.
+## ✨ Key Features
 
-Reported project presentation points include:
-- Epochs: 5
-- Image size: 240
-- Batch size: 16
-- Segmentation-based tumor detection
-- Performance indicators such as precision, recall, and mAP
+| Feature | Description |
+|---|---|
+| MRI Upload | Upload MRI slice images through the Streamlit sidebar |
+| Tumor Detection | Detect tumor regions using a YOLOv8 segmentation model |
+| 2D Segmentation | Visualize AI-segmented tumor regions on MRI slices |
+| 3D Localization | Map detected tumor position into a simplified anatomical 3D space |
+| Confidence Analysis | Display model confidence and reliability indicators |
+| Diagnostic Summary | Provide interpretation cards for confidence, lesion size, and spatial mapping |
+| Technical Parameters | Show inference time, preprocessing method, and model metadata |
 
-### 2. 3D U-Net
-Used as the volumetric segmentation concept for 3D MRI analysis.
+---
 
-Key workflow:
-- 3D medical image preprocessing
-- MONAI transforms
-- volumetric segmentation learning
-- Dice-loss-based optimization
+## 🛠 Tech Stack
 
-### 3. Explainable / Interpretable Visualization
-The app and presentation also emphasize visual interpretation of inference results, including confidence reporting and anatomical localization.
+| Category | Technology |
+|---|---|
+| Language | Python |
+| Web Framework | Streamlit |
+| Deep Learning | PyTorch |
+| Detection / Segmentation | Ultralytics YOLOv8 |
+| Medical Imaging Workflow | 3D U-Net concept, MONAI-based preprocessing workflow |
+| Image Processing | OpenCV, Pillow, NumPy |
+| Visualization | Plotly |
+| Data Handling | Pandas |
+| Dataset Source | Kaggle / BraTS-related brain tumor MRI dataset |
+
+---
+
+## Model Architecture
+
+### YOLOv8 Segmentation
+
+YOLOv8 is used for **2D MRI slice-based tumor detection and segmentation**.
+
+Project configuration summary:
+
+| Item | Setting |
+|---|---|
+| Model | YOLOv8s-Segmentation |
+| Task | Brain tumor segmentation |
+| Input | MRI slice image |
+| Image size | 240 |
+| Batch size | 16 |
+| Epochs | 5 |
+| Output | Tumor mask, bounding box, confidence score |
+
+### 3D U-Net Concept
+
+The project also includes a 3D medical imaging workflow concept based on **3D U-Net**.
+
+The 3D U-Net workflow focuses on:
+
+- volumetric MRI data handling,
+- 3D convolution-based segmentation,
+- Dice-loss-based optimization,
+- and tumor region analysis across MRI volume space.
+
+### Streamlit Application
+
+The deployed application provides:
+
+- MRI image upload,
+- YOLOv8 model inference,
+- 2D tumor segmentation visualization,
+- Plotly-based 3D tumor localization,
+- confidence score display,
+- lesion size estimation,
+- spatial mapping interpretation,
+- and a technical parameter panel.
+
+---
 
 ## Dataset
 
-This project is based on a **brain tumor MRI dataset from Kaggle / BraTS-related sources**.
+This project uses a **brain tumor MRI dataset from Kaggle / BraTS-related sources**.
 
-Presentation summary:
-- Adult glioma MRI cases
-- 1,251 cases
-- 4 MRI modalities per case
-- segmentation targets including ET, TC, and WT
-- 3D-to-2D conversion for slice-based training workflow
+Project presentation summary:
 
-> Please make sure that your actual public repository clearly names the dataset version you used (for example, Kaggle BraTS-derived data) and follows the dataset's usage terms.
+| Item | Description |
+|---|---|
+| Target disease | Adult glioma, including GBM and lower-grade glioma |
+| Number of cases | 1,251 cases |
+| MRI modalities | 4 MRI modalities per case |
+| Segmentation classes | ET, TC, WT |
+| 2D slice dataset | 64,213 MRI slice images |
+| Preprocessing | 3D NIfTI to 2D image conversion |
+| Split | Train / Validation = 8 : 2 |
+
+> Dataset files, MRI images, and segmentation labels are **not owned by this repository author**.  
+> They remain subject to the original dataset license and terms of use.
+
+---
 
 ## Repository Structure
 
@@ -90,28 +156,10 @@ Brain-AI/
 ├── requirements.txt
 ├── packages.txt
 ├── .gitignore
-├── assets/
-│   └── screenshots/
-│       ├── streamlit_preview_1.png
-│       └── streamlit_preview_2.png
-├── notebooks/
-│   └── GBM_training_clean.ipynb   # recommended cleaned notebook
-└── models/
-    └── best.pt                    # not recommended for direct Git tracking
+
 ```
 
-## Main Application
-
-The Streamlit application (`app.py`) includes:
-
-- model loading with `ultralytics.YOLO`
-- MRI image upload
-- tumor segmentation inference
-- 2D result visualization
-- 3D anatomical localization using Plotly
-- confidence and lesion summary metrics
-- diagnostic interpretation blocks
-
+---
 ## Installation
 
 ### 1. Clone the repository
@@ -127,88 +175,128 @@ cd Brain-AI
 pip install -r requirements.txt
 ```
 
-If needed for Streamlit Cloud or Linux-based deployment, system packages can be listed in `packages.txt`.
-
 ### 3. Prepare model weights
 
-Place your trained YOLO model file in the project root:
+Place the trained YOLOv8 model file in the project root:
 
 ```bash
 best.pt
 ```
 
-The current app expects:
+The Streamlit app expects the model path below:
 
 ```python
-model = YOLO('best.pt')
+model = YOLO("best.pt")
 ```
 
-### 4. Run the Streamlit app
+### 4. Run the application
 
 ```bash
 streamlit run app.py
 ```
 
+---
+
 ## Requirements
 
-Typical Python dependencies include:
+```txt
+streamlit
+opencv-python-headless
+numpy
+torch
+ultralytics
+Pillow
+plotly
+pandas
+```
 
-- streamlit
-- opencv-python-headless
-- numpy
-- torch
-- ultralytics
-- pillow
-- plotly
-- pandas
+For Streamlit Cloud or Linux deployment, `packages.txt` may include:
 
-## Recommended Cleanup Before Publishing
+```txt
+libgl1
+libglib2.0-0
+```
 
-Before making the repository fully public, it is strongly recommended to:
+---
 
-- remove **Kaggle API tokens** or any credential files,
-- remove unnecessary notebook outputs,
-- avoid uploading large model weights directly to GitHub,
-- keep only cleaned and reproducible training notebooks,
-- add screenshots and project assets in organized folders,
-- verify that no externally sourced material is incorrectly claimed as your copyright.
+## Project Workflow
+
+```mermaid
+flowchart LR
+    A[MRI Image Upload] --> B[Image Preprocessing]
+    B --> C[YOLOv8 Segmentation]
+    C --> D[2D Tumor Mask Visualization]
+    C --> E[Confidence Score]
+    C --> F[Spatial Coordinate Mapping]
+    F --> G[Plotly 3D Localization]
+    E --> H[Diagnostic Interpretation Panel]
+    G --> H
+```
+
+---
+
+## Results Summary
+
+The project presentation reported the following evaluation examples:
+
+| Metric | Value |
+|---|---:|
+| Dice Score | 0.9099 |
+| AUC | 0.9585 |
+
+The Streamlit application also displays case-level inference information such as:
+
+- tumor detection confidence,
+- estimated lesion area,
+- normalized spatial coordinates,
+- inference time,
+- and preprocessing status.
+
+---
 
 ## Limitations
 
-- This project is an academic prototype, not a clinical product.
-- The current implementation is not a certified medical device.
-- Model performance may vary depending on preprocessing, dataset split, and training scale.
-- Public deployment should not imply real-world medical diagnosis capability.
+- This project is an academic prototype.
+- It is not intended for real clinical diagnosis.
+- The model was trained under limited experimental conditions.
+- Performance may vary depending on MRI modality, preprocessing, dataset split, and model weights.
+- The current 3D localization is a simplified visualization, not a full anatomical registration pipeline.
+
+---
 
 ## Future Work
 
-Possible extensions include:
+Possible improvements include:
 
-- multimodal MRI fusion
-- domain-specific data augmentation
-- better explainable AI methods such as Grad-CAM integration
-- federated learning across institutions
-- extension to stroke, Alzheimer's disease, or other brain disorders
-- richer 3D web dashboard interfaces
+- multimodal MRI fusion using FLAIR, T1CE, T1, and T2,
+- improved 3D segmentation using full volumetric models,
+- Grad-CAM or attention-based explainability,
+- domain-specific medical image augmentation,
+- federated learning for multi-institutional training,
+- and extension to other neurological diseases.
+
+---
 
 ## License
 
-This project is licensed under the **MIT License**.
+This project is licensed under the **MIT License**.  
 See the [LICENSE](LICENSE) file for details.
+
+---
 
 ## Copyright Notice
 
 Copyright (c) 2026 Jeongeun Choi
 
-The copyright and MIT license in this repository apply **only to the original code and original documentation created by the repository author**.
+The MIT License applies only to the **original source code and documentation** created by the repository author.
 
-They **do not automatically apply** to external materials, including but not limited to:
+It does **not** apply to external materials, including:
 
-- datasets obtained from Kaggle or BraTS-related sources,
-- pretrained model weights,
+- Kaggle or BraTS-related datasets,
+- MRI images and segmentation masks,
+- pretrained or externally trained model weights,
 - third-party libraries,
-- externally sourced figures, images, or media,
-- papers, challenge materials, or other content owned by their respective authors.
+- external figures, screenshots, papers, or media.
 
-All external materials remain the property of their original copyright holders and must be used according to their own licenses and terms.
+All external materials remain the property of their respective copyright holders and must be used according to their own licenses and terms.
 
