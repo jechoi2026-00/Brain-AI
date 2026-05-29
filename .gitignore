@@ -1,3 +1,56 @@
-venv
-.venv
-\venv
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.Python
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Environment variables and secrets
+.env
+.env.*
+kaggle.json
+*.pem
+*.key
+
+# Datasets and medical images
+brats_raw/
+yolo_dataset/
+data/
+datasets/
+*.nii
+*.nii.gz
+*.dcm
+*.png
+*.jpg
+*.jpeg
+
+# Model weights and experiment outputs
+*.pt
+*.pth
+*.onnx
+*.ckpt
+runs/
+BraTS_Short_Exp/
+weights/
+outputs/
+results/
+*.zip
+*.tar
+*.tar.gz
+
+# Streamlit
+.streamlit/secrets.toml
+
+# OS files
+.DS_Store
+Thumbs.db
