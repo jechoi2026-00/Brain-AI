@@ -26,13 +26,13 @@ This repository was developed as an academic project and is intended for **resea
 
 Below are example outputs from the Streamlit application.
 
-### 1) Pixel-wise ROC Curve
+### 1) Brain Tumor 3D Diagnosis XAI 
+<img width="1208" height="1106" alt="그림01" src="https://github.com/user-attachments/assets/a0072ff8-394d-4a06-b3bf-1b7479e44ea6" />
 
-![Streamlit Preview 1](assets/screenshots/streamlit_preview_1.png)
+### 2) Precision Diagnostic Interpretation
 
-### 2) Tumor Detection Example
+<img width="1600" height="1123" alt="그림03" src="https://github.com/user-attachments/assets/4f00091c-7861-43b4-8c57-5e5bf2d55999" />
 
-![Streamlit Preview 2](assets/screenshots/streamlit_preview_2.png)
 
 ## Project Background
 
