@@ -19,7 +19,7 @@
 **Brain-AI** is a research-oriented deep learning project for **brain tumor detection, segmentation, and visualization using MRI images**.
 
 The project demonstrates how a medical AI workflow can combine:
-
+- **Project Duration** for 2026. 4. 6 ~ 2026 4. 10
 - **YOLOv8 segmentation** for 2D tumor detection from MRI slices
 - **3D U-Net-based volumetric analysis concept** for 3D medical imaging
 - **Streamlit** for an interactive web application
